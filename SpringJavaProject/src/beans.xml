@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+	<bean class="com.xoriant.beans.Employee" id="emp" autowire="byType">
+		<property name="empId" value="10"></property>
+		<property name="empName" value="Nik"></property>
+		<property name="designation" value="Developer"></property>
+	</bean>
+		<bean class="com.xoriant.beans.Person" id="person" autowire="byType">
+		<constructor-arg name="name" value="Nik"></constructor-arg>
+		<constructor-arg name="age" value="21"></constructor-arg>
+	</bean>
+	<bean class="com.xoriant.beans.Address" id="address" autowire-candidate="false">
+		<property name="area" value="Hinjewadi"></property>
+		<property name="city" value="Pune"></property>
+		<property name="pincode" value="411057"></property>
+	</bean>
+	<bean class="com.xoriant.beans.Address" id="address1" autowire-candidate="true">
+		<property name="area" value="Baner"></property>
+		<property name="city" value="Pune"></property>
+		<property name="pincode" value="411057"></property>
+	</bean>
+
+	
+	
+</beans>
